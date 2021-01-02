@@ -7,7 +7,7 @@ setup(
                            "SemanticRoleLabeling/AutoProcessor/Sentence/FrameNet/*.pyx"],
                           compiler_directives={'language_level': "3"}),
     name='NlpToolkit-SemanticRoleLabeling-Cy',
-    version='1.0.0',
+    version='1.0.1',
     packages=['SemanticRoleLabeling', 'SemanticRoleLabeling.AutoProcessor',
               'SemanticRoleLabeling.AutoProcessor.Sentence', 'SemanticRoleLabeling.AutoProcessor.Sentence.FrameNet',
               'SemanticRoleLabeling.AutoProcessor.Sentence.Propbank', 'SemanticRoleLabeling.AutoProcessor.ParseTree',
@@ -19,5 +19,6 @@ setup(
     license='',
     author='olcaytaner',
     author_email='olcay.yildiz@ozyegin.edu.tr',
-    description='Semantic Role Labeling Library'
+    description='Semantic Role Labeling Library',
+    install_requires = ['NlpToolkit-AnnotatedSentence-Cy', 'NlpToolkit-AnnotatedTree-Cy']
 )
