@@ -1,8 +1,7 @@
 from MorphologicalAnalysis.MorphologicalTag import MorphologicalTag
 from AnnotatedSentence.AnnotatedSentence cimport AnnotatedSentence
 from AnnotatedSentence.AnnotatedWord cimport AnnotatedWord
-from AnnotatedSentence.AutoProcessor.AutoArgument.SentenceAutoArgument cimport SentenceAutoArgument
-
+from SemanticRoleLabeling.AutoProcessor.Sentence.Propbank.SentenceAutoArgument cimport SentenceAutoArgument
 
 cdef class TurkishSentenceAutoArgument(SentenceAutoArgument):
 

@@ -1,7 +1,7 @@
 from PropBank.FramesetList cimport FramesetList
 from AnnotatedSentence.AnnotatedSentence cimport AnnotatedSentence
 from AnnotatedSentence.AnnotatedWord cimport AnnotatedWord
-from AnnotatedSentence.AutoProcessor.AutoPredicate.SentenceAutoPredicate cimport SentenceAutoPredicate
+from SemanticRoleLabeling.AutoProcessor.Sentence.Propbank.SentenceAutoPredicate cimport SentenceAutoPredicate
 
 
 cdef class TurkishSentenceAutoPredicate(SentenceAutoPredicate):

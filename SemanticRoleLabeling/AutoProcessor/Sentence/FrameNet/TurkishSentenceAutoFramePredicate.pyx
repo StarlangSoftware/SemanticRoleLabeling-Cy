@@ -2,8 +2,7 @@ from FrameNet.FrameNet cimport FrameNet
 
 from AnnotatedSentence.AnnotatedSentence cimport AnnotatedSentence
 from AnnotatedSentence.AnnotatedWord cimport AnnotatedWord
-from AnnotatedSentence.AutoProcessor.AutoPredicate.SentenceAutoFramePredicate cimport SentenceAutoFramePredicate
-
+from SemanticRoleLabeling.AutoProcessor.Sentence.FrameNet.SentenceAutoFramePredicate cimport SentenceAutoFramePredicate
 
 cdef class TurkishSentenceAutoFramePredicate(SentenceAutoFramePredicate):
 
