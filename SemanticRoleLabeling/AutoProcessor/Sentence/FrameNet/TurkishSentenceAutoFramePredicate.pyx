@@ -6,7 +6,7 @@ from SemanticRoleLabeling.AutoProcessor.Sentence.FrameNet.SentenceAutoFramePredi
 
 cdef class TurkishSentenceAutoFramePredicate(SentenceAutoFramePredicate):
 
-    cdef FrameNet __frameNet
+    cdef FrameNet __frame_net
 
     def __init__(self, frameNet: FrameNet):
         """
@@ -18,7 +18,7 @@ cdef class TurkishSentenceAutoFramePredicate(SentenceAutoFramePredicate):
         frameNet : FrameNet
             FrameNet containing the Turkish frameNet frames.
         """
-        self.__frameNet = frameNet
+        self.__frame_net = frameNet
 
     cpdef bint autoPredicate(self, AnnotatedSentence sentence):
         """
@@ -35,12 +35,12 @@ cdef class TurkishSentenceAutoFramePredicate(SentenceAutoFramePredicate):
         bool
             If at least one word has been tagged, true; false otherwise.
         """
-        cdef list candidateList
+        cdef list candidate_list
         cdef AnnotatedWord word
-        candidateList = sentence.predicateFrameCandidates(self.__frameNet)
-        for word in candidateList:
+        candidate_list = sentence.predicateFrameCandidates(self.__frame_net)
+        for word in candidate_list:
             if isinstance(word, AnnotatedWord):
                 word.setArgument("PREDICATE$NONE$" + word.getSemantic())
-        if len(candidateList) > 0:
+        if len(candidate_list) > 0:
             return True
         return False

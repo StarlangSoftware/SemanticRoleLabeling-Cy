@@ -11,7 +11,7 @@ setup(
                            "SemanticRoleLabeling/AutoProcessor/Sentence/FrameNet/*.pyx"],
                           compiler_directives={'language_level': "3"}),
     name='NlpToolkit-SemanticRoleLabeling-Cy',
-    version='1.0.4',
+    version='1.0.5',
     packages=['SemanticRoleLabeling', 'SemanticRoleLabeling.AutoProcessor',
               'SemanticRoleLabeling.AutoProcessor.Sentence', 'SemanticRoleLabeling.AutoProcessor.Sentence.FrameNet',
               'SemanticRoleLabeling.AutoProcessor.Sentence.Propbank', 'SemanticRoleLabeling.AutoProcessor.ParseTree',

@@ -6,7 +6,7 @@ from SemanticRoleLabeling.AutoProcessor.Sentence.Propbank.SentenceAutoPredicate 
 
 cdef class TurkishSentenceAutoPredicate(SentenceAutoPredicate):
 
-    cdef FramesetList __framesetList
+    cdef FramesetList __frameset_list
 
     def __init__(self, framesetList: FramesetList):
         """
@@ -18,7 +18,7 @@ cdef class TurkishSentenceAutoPredicate(SentenceAutoPredicate):
         framesetList : FramesetList
             FramesetList containing the Turkish propbank frames.
         """
-        self.__framesetList = framesetList
+        self.__frameset_list = framesetList
 
     cpdef bint autoPredicate(self, AnnotatedSentence sentence):
         """
@@ -35,12 +35,12 @@ cdef class TurkishSentenceAutoPredicate(SentenceAutoPredicate):
         bool
             If at least one word has been tagged, true; false otherwise.
         """
-        cdef list candidateList
+        cdef list candidate_list
         cdef AnnotatedWord word
-        candidateList = sentence.predicateCandidates(self.__framesetList)
-        for word in candidateList:
+        candidate_list = sentence.predicateCandidates(self.__frameset_list)
+        for word in candidate_list:
             if isinstance(word, AnnotatedWord):
                 word.setArgument("PREDICATE$" + word.getSemantic())
-        if len(candidateList) > 0:
+        if len(candidate_list) > 0:
             return True
         return False
