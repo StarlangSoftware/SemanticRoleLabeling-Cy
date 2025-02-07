@@ -40,7 +40,7 @@ cdef class TurkishSentenceAutoFramePredicate(SentenceAutoFramePredicate):
         candidate_list = sentence.predicateFrameCandidates(self.__frame_net)
         for word in candidate_list:
             if isinstance(word, AnnotatedWord):
-                word.setArgument("PREDICATE$NONE$" + word.getSemantic())
+                word.setArgumentList("PREDICATE$NONE$" + word.getSemantic())
         if len(candidate_list) > 0:
             return True
         return False
